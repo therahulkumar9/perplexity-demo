@@ -80,13 +80,14 @@ export default function ChatApp() {
           timestamp: new Date(),
         },
       ])
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : "Unknown error"
       setMessages((msgs) => [
         ...msgs,
         {
           id: Date.now() + 2,
           role: "assistant",
-          content: "❌ Error: " + (err.message || "Unknown error."),
+          content: "❌ Error: " + errorMessage,
           timestamp: new Date(),
         },
       ])

@@ -38,10 +38,9 @@ export async function POST(req: NextRequest) {
         data.choices?.[0]?.text ||
         "No answer received.",
     })
-  } catch (error: any) {
-    return NextResponse.json(
-      { error: error.message || "Unknown error" },
-      { status: 500 }
-    )
+  } catch (error: unknown) {
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error"
+    return NextResponse.json({ error: errorMessage }, { status: 500 })
   }
 }
