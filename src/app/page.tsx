@@ -147,7 +147,7 @@ export default function ChatApp() {
             <input
               type="password"
               className="bg-black border border-zinc-700 rounded px-4 py-2 text-zinc-100 text-base w-full focus:outline-none"
-              placeholder="sk-..."
+              placeholder="pplx-..."
               value={apiKey}
               onChange={(e) => setApiKey(e.target.value)}
               autoFocus
@@ -183,7 +183,7 @@ export default function ChatApp() {
       <main className="flex-1 w-full max-w-2xl mx-auto px-2 sm:px-4 py-8 pb-32 overflow-y-auto">
         <div className="flex flex-col gap-6">
           {messages.length === 0 ? (
-            <div className="flex flex-col items-center justify-center py-40 select-none">
+            <div className="flex flex-col items-center justify-center py-35 md:py-18 select-none">
               <span className="text-5xl mb-3">🛸</span>
               <span className="font-extrabold text-2xl text-white mb-2 tracking-tight">
                 Welcome
